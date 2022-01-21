@@ -16,27 +16,27 @@ function App() {
         <div className="label">Tip Amount</div>
         <div className="dollars">
           <sup>$</sup>
-          <span id="tip-amount">{((bill * tips) / 100).toFixed(2)}</span>
+          <span id="tip-amount">{((parseInt(bill) * tips) / 100).toFixed(2)}</span>
         </div>
       </div>
       <div className="total-per-person">
         <div className="label">Total Per Person</div>
         <div className="dollars">
           <sup>$</sup>
-          <span id="total-per-person">{((bill + (bill * tips) / 100) / people).toFixed(2)}</span>
+          <span id="total-per-person">{((parseInt(bill) + (parseInt(bill) * tips) / 100) / parseInt(people)).toFixed(2)}</span>
         </div>
       </div>
 
       <div className="input-fields">
         <div className="bill-amount">
           <div className="field">
-            <input type="text" id="bill-amount" name="bill-amount" value={bill} onChange={(e) => setBill(parseInt(e.target.value))} />
+            <input type="text" id="bill-amount" name="bill-amount" value={bill} onChange={(e) => setBill(e.target.value)} />
           </div>
           <div className="label">Bill Amount</div>
         </div>
         <div className="number-of-people">
           <div className="field">
-            <input type="text" id="number-of-people" name="number-of-people" value={people} onChange={(e) => setPeople(parseInt(e.target.value))} />
+            <input type="text" id="number-of-people" name="number-of-people" value={people} onChange={(e) => setPeople(e.target.value)} min="1" />
           </div>
           <div className="label">Number of People</div>
         </div>
