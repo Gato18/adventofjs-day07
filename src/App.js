@@ -6,6 +6,10 @@ function App() {
   const [bill, setBill] = useState(102.02);
   const [people, setPeople] = useState(3);
 
+  console.log(typeof tips);
+  console.log(typeof bill);
+  console.log(typeof people);
+
   return (
     <div className="wrapper">
       <div className="tip-amount">
@@ -26,13 +30,13 @@ function App() {
       <div className="input-fields">
         <div className="bill-amount">
           <div className="field">
-            <input type="text" id="bill-amount" name="bill-amount" value={bill} onChange={(e) => setBill(e.target.value)} />
+            <input type="text" id="bill-amount" name="bill-amount" value={bill} onChange={(e) => setBill(parseInt(e.target.value))} />
           </div>
           <div className="label">Bill Amount</div>
         </div>
         <div className="number-of-people">
           <div className="field">
-            <input type="text" id="number-of-people" name="number-of-people" value={people} onChange={(e) => setPeople(e.target.value)} />
+            <input type="text" id="number-of-people" name="number-of-people" value={people} onChange={(e) => setPeople(parseInt(e.target.value))} />
           </div>
           <div className="label">Number of People</div>
         </div>
